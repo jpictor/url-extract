@@ -1,0 +1,14 @@
+{
+    "presets": [
+      "es2015",
+      "stage-0",
+      "latest"
+    ],
+    "plugins": [
+      "transform-runtime",
+      "syntax-async-functions",
+      "transform-regenerator",
+      "add-module-exports"
+    ],
+    "sourceMaps": "inline"
+}
