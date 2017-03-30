@@ -94,10 +94,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 app.use('/api/url-extract', router)
 
-let port = process.env.PORT || 2223
-
-console.log(`STARTING: url-extract service on port ${port}`)
-
-app.listen(port).on('error', err => {
+console.log(`STARTING: url-extract service on port ${process.env.PORT}`)
+app.listen(process.env.PORT).on('error', err => {
   console.error(`ERROR: ${err.message}`)
 })

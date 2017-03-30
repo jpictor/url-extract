@@ -1,5 +1,13 @@
 {
   "name": "url-extract",
+  "version": "0.0.1",
+  "description": "URL content extraction service.",
+  "author": "Jay Painter",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": " git@github.com:jpictor/url-extract.git"
+  },
   "main": "dist/server.js",
   "dependencies": {
     "babel-cli": "^6.22.2",
