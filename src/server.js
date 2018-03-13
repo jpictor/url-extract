@@ -1,5 +1,7 @@
 import express from 'express'
+import cors from 'cors'
 import bodyParser from 'body-parser'
+import path from 'path'
 import { get } from 'lodash'
 import { oembedApiDoc } from './oembed'
 import { checkUrlApiDoc } from './check_url'
@@ -90,9 +92,12 @@ router.route('/all')
     .all(errorChecking(notAllowed))
 
 let app = express()
+app.use(cors())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 app.use('/api/url-extract', router)
+
+app.use('/api/url-extract/static', express.static(path.join(__dirname, '../client')))
 
 console.log(`STARTING: url-extract service on port ${process.env.PORT}`)
 app.listen(process.env.PORT).on('error', err => {
